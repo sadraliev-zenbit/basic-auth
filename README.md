@@ -123,6 +123,7 @@ basic-auth/
 All of this will come in handy later on.
 
 Now, if you run your application, you need look message `hello world` in your main page.
+
 ![main page](./public/main_page_screenshot.png)
 
 Let's update our controller.
@@ -160,6 +161,7 @@ export class AppController {
 }
 ```
 and go to `localhost:3000/admin` you should see page like this:
+
 ![unsecure page](./public/unsecure_screenshot.png)
 
 Great! Now let us protect our page. 
@@ -220,6 +222,7 @@ export default class BasicAuthGuard implements CanActivate {
 }
 ```
 then we need to add the guard in our controller.
+
 ```typescript
 // src/guards/basic-auth.guard.ts
 
@@ -242,9 +245,10 @@ async root(@Res() res: Response) {
 
 ```
 Ok, now try to open our the protected page - `localhost:3000/admin`.
-You should see this:
-and go to `localhost:3000/admin` you should see page like this:
+You should see like this:
+
 ![secure page](./public/secure_screenshot.png)
 
 it happened, because we added **WWW-Authenticate: Basic** in header of response and specified **401 status code**. 
+
 ![unauthorized header](./public/unauthorized_screenshot.png)
