@@ -1,6 +1,6 @@
 # HTTP Basic authentication
-[About Basic Authentication](#theory)
-[How to implement BASIC authentication in NestJS](#how-to-implement-basic-auth-in-nestjs)
+* [About Basic Authentication](#theory)
+* [How to implement BASIC authentication in NestJS](#how-to-implement-basic-auth-in-nestjs)
 
 In the context of an HTTP transaction, basic access authentication is a method for an HTTP user agent (e.g. a web browser) to provide a username and password when making a request.
 For instance:
