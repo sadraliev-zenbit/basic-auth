@@ -176,7 +176,6 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { ExpandedRequestInterface } from 'shared/interfaces/expanded-request.interface';
 
 @Injectable()
 export default class BasicAuthGuard implements CanActivate {
@@ -199,6 +198,10 @@ export default class BasicAuthGuard implements CanActivate {
         throw new UnauthorizedException();
       }
 
+      /**
+       * you will get encrypted credentials like this: 
+       * Authorization: Basic YWRtaW46YWRtaW4gcGFzc3dvcmQ=
+       */
       const scheme = authorization.split(' ')[0];
       const authorizationParameters = authorization.split(' ')[1];
 
